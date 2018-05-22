@@ -1,18 +1,30 @@
 /* ---------------------------------------------------
-    Nav Style
+    Palette
+--------------------------------------------------- */
+#sidebarNavPalette {
+    color: #74b0b1;
+    color: #01616d;
+    color: #005264;
+}
+
+/* ---------------------------------------------------
+    Fonts
 --------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC');
 
+/* ---------------------------------------------------
+    Nav Style
+--------------------------------------------------- */
 
 body {
     font-family: 'Montserrat', sans-serif;
     background: #fafafa;
-    letter-spacing: 3px;
 }
 
 p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 300;
     line-height: 1.7em;
     letter-spacing: 3px;
@@ -51,29 +63,40 @@ a, a:hover, a:focus {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 #sidebar {
-    width: 250px;
+    width: 300px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
+    background: #01616d;
     color: #fff;
     transition: all 0.3s;
 }
 
+#sidebarCollapse {
+    color: whitesmoke;
+}
+
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -300px;
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+    font-family: 'IM Fell French Canon SC', serif;
+    background: #005264;
+    padding: 20px 10px 20px 0;
+    height: 70px;
+}
+
+#sidebar .subtext {
+    font-size: .8rem;
+    font-variant: small-caps;
+    padding-top: 20px; 
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    padding: 0;
 }
 
 #sidebar ul p {
@@ -82,18 +105,21 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
+    padding: 10px 20px;
+    font-size: .9rem;
+    text-transform: uppercase;
     display: block;
+    border-bottom: 1px solid #005264;
 }
+
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #74b0b1;
     background: #fff;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #74b0b1;
 }
 
 
@@ -117,7 +143,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #74b0b1;
 }
 
 ul.CTAs {
@@ -136,7 +162,7 @@ a.download {
     color: #7386D5;
 }
 a.article, a.article:hover {
-    background: #6d7fcc !important;
+    background: #74b0b1 !important;
     color: #fff !important;
 }
 
@@ -145,8 +171,8 @@ a.article, a.article:hover {
     CONTENT STYLE
 ----------------------------------------------------- */
 #content {
-    width: calc(100% - 250px);
-    padding: 40px;
+    width: calc(100% - 300px);
+    padding: 0px;
     min-height: 100vh;
     transition: all 0.3s;
     position: absolute;
@@ -157,13 +183,70 @@ a.article, a.article:hover {
     width: 100%;
 }
 
+#content .content-header {
+    padding: 20px 0;
+}
+#content .content-header h3{
+    font-family: 'IM Fell French Canon SC', serif;  
+    color: #005264;  
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+#content .content-header .content-header-subtitle {
+    font-size: .9rem;
+    font-variant: small-caps;
+    letter-spacing: 4px;
+}
+
+#content .content-title {
+    background-color: #01616d;
+    padding: 20px 0;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+#content .content-nav {
+    border-top: #74b0b1 solid 1px;
+    border-bottom: #74b0b1 solid 1px;
+    background-color: #01616d;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+#content .content-nav .list-inline {
+    margin: 0;
+}
+
+#content .content-nav .list-inline li {
+    margin: 0 2rem;
+    font-size: .8rem;
+}
+
+#content .content-nav .list-inline li span:last-child{
+    display: block;
+    color: #01616d;
+    font-size: 1.5em;
+    line-height: 0;
+    opacity: 0;
+    transition: opacity .1s ease;
+}
+
+#content .content-nav .list-inline li:hover span:last-child{
+    display: block;
+    color: whitesmoke;
+    font-size: 1.5em;
+    line-height: 0;
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+
 
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -300px;
     }
     #sidebar.active {
         margin-left: 0;
@@ -172,10 +255,16 @@ a.article, a.article:hover {
         width: 100%;
     }
     #content.active {
-        width: calc(100% - 250px);
-    }
-    #sidebarCollapse span {
-        display: none;
+        width: calc(100% - 300px);
     }
 }
 
+/* ---------------------------------------------------
+    HEADER
+----------------------------------------------------- */
+#top-lvl-header {
+    background-color: #005264;
+    height: 70px;
+    padding: 20px;
+
+}
